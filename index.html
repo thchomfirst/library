@@ -3,172 +3,195 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ฐานข้อมูล</title></title>
-    <!-- ¹Óà¢éÒ¿Í¹µìÀÒÉÒä·Â¨Ò¡ Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;700&display=swap" rel="stylesheet">
+    <title>คลังปัญญาและฐานข้อมูลวิจัยดิจิทัล</title>
+    <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        /* µÑé§¤èÒ¾×é¹°Ò¹ */
         body {
             font-family: 'Sarabun', sans-serif;
-            background-color: #f0f2f5;
+            background-color: #f8fafc;
+            background-image: radial-gradient(#e2e8f0 0.5px, transparent 0.5px);
+            background-size: 24px 24px;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        .glass-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            border-color: #3b82f6;
+        }
+        .search-container:focus-within {
+            ring: 2px solid #3b82f6;
+        }
+        .logo-container {
+            height: 100px;
             display: flex;
-            justify-content: center;
             align-items: center;
-            min-height: 100vh;
-            margin: 0;
-            padding: 20px;
+            justify-content: center;
+            padding: 1rem;
+            background: #f1f5f9;
+            border-radius: 12px;
         }
-
-        /* ¡ÅèÍ§¤ÃÍºµÒÃÒ§ */
-        .container {
-            width: 100%;
-            max-width: 850px;
-        }
-
-        /* µ¡áµè§µÒÃÒ§ãËéàËÁ×Í¹¡ÒÃì´ÊÁÑÂãËÁè */
-        .modern-table {
-            width: 100%;
-            border-collapse: separate;
-            border-spacing: 0;
-            background-color: #ffffff;
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            border: 1px solid #e1e4e8;
-        }
-
-        /* µ¡áµè§ªèÍ§ÀÒÂã¹µÒÃÒ§ */
-        .modern-table td {
-            padding: 30px;
-            vertical-align: middle;
-            border-bottom: 1px solid #f0f2f5;
-        }
-
-        .modern-table tr:last-child td {
-            border-bottom: none;
-        }
-
-        /* ÊèÇ¹¢Í§ÃÙ»ÀÒ¾/âÅâ¡é */
-        .logo-column {
-            width: 250px;
-            text-align: center;
-            background-color: #fafbfc;
-            border-right: 1px solid #f0f2f5;
-        }
-
-        .logo-column img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 10px;
-            transition: transform 0.3s ease;
-        }
-
-        .logo-column a:hover img {
-            transform: scale(1.08);
-        }
-
-        /* ÊèÇ¹¢Í§à¹×éÍËÒ¢éÍ¤ÇÒÁ */
-        .content-column {
-            padding-left: 40px !important;
-        }
-
-        /* ÅÔ§¡ìËÑÇ¢éÍËÅÑ¡ */
-        .main-link {
-            display: block;
-            font-size: 1.4rem;
-            font-weight: 700;
-            color: #1a73e8;
-            text-decoration: none;
-            line-height: 1.4;
-            margin-bottom: 12px;
-            transition: color 0.2s;
-        }
-
-        .main-link:hover {
-            color: #1557b0;
-            text-decoration: underline;
-        }
-
-        /* ÅÔ§¡ìË¹èÇÂ§Ò¹ÃÍ§ */
-        .sub-link {
-            display: inline-block;
-            font-size: 1rem;
-            color: #5f6368;
-            text-decoration: none;
-            background-color: #f1f3f4;
-            padding: 6px 16px;
-            border-radius: 50px;
-            font-weight: 400;
-            transition: all 0.3s ease;
-        }
-
-        .sub-link:hover {
-            background-color: #e8eaed;
-            color: #202124;
-        }
-
-        /* »ÃÑºáµè§àÁ×èÍà»Ô´ã¹Á×Í¶×Í */
-        @media screen and (max-width: 600px) {
-            .modern-table td {
-                display: block;
-                width: 100% !important;
-                text-align: center;
-                border-right: none;
-            }
-            .content-column {
-                padding: 25px !important;
-            }
-            .logo-column {
-                padding-bottom: 10px !important;
-            }
+        .logo-container img {
+            max-height: 100%;
+            object-fit: contain;
+            mix-blend-mode: multiply;
         }
     </style>
 </head>
-<body>
+<body class="p-6 md:p-12">
 
-<div class="container">
-    <table class="modern-table">
-        <tbody>
-            <tr>
-                <td class="logo-column">
-                    <a href="https://kb.psu.ac.th/psukb/" target="_blank">
-                        <!--  -->
-                        <img src="https://lib.rpu.ac.th/wp-content/uploads/2024/11/r1.jpg" alt="PSU KB Logo">
-                    </a>
-                </td>
-                <td class="content-column">
-                    <a href="https://kb.psu.ac.th/psukb/" class="main-link" target="_blank">
-                        คลังปัญญามหาวิทยาลัยสงขลานครินทร์ (PSU Knowledge Bank)
-                    </a>
-                    <a href="https://kb.psu.ac.th/psukb/" class="sub-link" target="_blank">
-                        สำนักทรัพยากรการเรียนรู้ มหาวิทยาลัยสงขลานครินทร์
-                    </a>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-</div>
-<div class="container">
-    <table class="modern-table">
-        <tbody>
-            <tr>
-                <td class="logo-column">
-                    <a href="https://kb.psu.ac.th/psukb/" target="_blank">
-                        <!--  -->
-                        <img src="https://lib.rpu.ac.th/wp-content/uploads/2024/11/r1.jpg" alt="PSU KB Logo">
-                    </a>
-                </td>
-                <td class="content-column">
-                    <a href="https://kb.psu.ac.th/psukb/" class="main-link" target="_blank">
-                        คลังปัญญามหาวิทยาลัยสงขลานครินทร์ (PSU Knowledge Bank)
-                    </a>
-                    <a href="https://kb.psu.ac.th/psukb/" class="sub-link" target="_blank">
-                        สำนักทรัพยากรการเรียนรู้ มหาวิทยาลัยสงขลานครินทร์
-                    </a>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-</div>
+    <!-- Header Section -->
+    <header class="max-w-7xl mx-auto mb-12 text-center">
+        <h1 class="text-4xl md:text-5xl font-bold text-slate-800 mb-4">คลังปัญญาและฐานข้อมูลวิจัย</h1>
+        <p class="text-slate-600 text-lg max-w-2xl mx-auto">รวบรวมแหล่งข้อมูลวิชาการ วิทยานิพนธ์ และงานวิจัยจากสถาบันชั้นนำทั่วประเทศไทยไว้ในที่เดียว</p>
+        
+        <!-- Search Bar -->
+        <div class="mt-10 max-w-xl mx-auto relative search-container rounded-full bg-white shadow-lg overflow-hidden flex items-center px-4 py-2 border border-slate-200">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+            </svg>
+            <input type="text" id="searchInput" placeholder="ค้นหาชื่อมหาวิทยาลัย หรือ ชื่อคลังข้อมูล..." class="w-full px-4 py-2 outline-none text-slate-700 bg-transparent" onkeyup="filterCards()">
+        </div>
+    </header>
+
+    <!-- Grid Layout -->
+    <main class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8" id="resourceGrid">
+        
+        <!-- Card Component Maker - JS will handle dynamic content if needed, but here's the static version -->
+        
+        <!-- Item 1 -->
+        <div class="glass-card p-5 rounded-3xl flex flex-col h-full resource-item">
+            <div class="logo-container mb-4">
+                <img src="https://lib.rpu.ac.th/wp-content/uploads/2024/11/r1.jpg" alt="PSU">
+            </div>
+            <div class="flex-grow">
+                <span class="inline-block px-3 py-1 text-xs font-semibold text-blue-600 bg-blue-100 rounded-full mb-2">Knowledge Bank</span>
+                <h3 class="text-lg font-bold text-slate-800 leading-tight mb-2 title-text">คลังปัญญามหาวิทยาลัยสงขลานครินทร์</h3>
+                <p class="text-sm text-slate-500 subtitle-text">สำนักทรัพยากรการเรียนรู้ มหาวิทยาลัยสงขลานครินทร์</p>
+            </div>
+            <a href="https://kb.psu.ac.th/psukb/" target="_blank" class="mt-6 w-full py-3 bg-slate-900 text-white text-center rounded-xl font-semibold hover:bg-blue-600 transition-colors">เข้าชมเว็บไซต์</a>
+        </div>
+
+        <!-- Item 2 -->
+        <div class="glass-card p-5 rounded-3xl flex flex-col h-full resource-item">
+            <div class="logo-container mb-4">
+                <img src="https://lib.rpu.ac.th/wp-content/uploads/2024/11/r2.jpg" alt="DPU">
+            </div>
+            <div class="flex-grow">
+                <span class="inline-block px-3 py-1 text-xs font-semibold text-indigo-600 bg-indigo-100 rounded-full mb-2">e-Theses</span>
+                <h3 class="text-lg font-bold text-slate-800 leading-tight mb-2 title-text">ฐานข้อมูลวิทยานิพนธ์ DPU</h3>
+                <p class="text-sm text-slate-500 subtitle-text">มหาวิทยาลัยธุรกิจบัณฑิตย์</p>
+            </div>
+            <a href="https://lib.dpu.ac.th/lib/onlinedb/77" target="_blank" class="mt-6 w-full py-3 bg-slate-900 text-white text-center rounded-xl font-semibold hover:bg-indigo-600 transition-colors">เข้าชมเว็บไซต์</a>
+        </div>
+
+        <!-- Item 3 -->
+        <div class="glass-card p-5 rounded-3xl flex flex-col h-full resource-item">
+            <div class="logo-container mb-4">
+                <img src="https://lib.rpu.ac.th/wp-content/uploads/2024/11/r3.jpg" alt="NU">
+            </div>
+            <div class="flex-grow">
+                <span class="inline-block px-3 py-1 text-xs font-semibold text-emerald-600 bg-emerald-100 rounded-full mb-2">Digital Repository</span>
+                <h3 class="text-lg font-bold text-slate-800 leading-tight mb-2 title-text">คลังงานวิจัย มหาวิทยาลัยนเรศวร</h3>
+                <p class="text-sm text-slate-500 subtitle-text">NU Digital Repository</p>
+            </div>
+            <a href="http://nuir.lib.nu.ac.th/dspace/" target="_blank" class="mt-6 w-full py-3 bg-slate-900 text-white text-center rounded-xl font-semibold hover:bg-emerald-600 transition-colors">เข้าชมเว็บไซต์</a>
+        </div>
+
+        <!-- Item 4 -->
+        <div class="glass-card p-5 rounded-3xl flex flex-col h-full resource-item">
+            <div class="logo-container mb-4">
+                <img src="https://lib.rpu.ac.th/wp-content/uploads/2024/11/r4.png" alt="ThaiEd">
+            </div>
+            <div class="flex-grow">
+                <span class="inline-block px-3 py-1 text-xs font-semibold text-orange-600 bg-orange-100 rounded-full mb-2">Education Research</span>
+                <h3 class="text-lg font-bold text-slate-800 leading-tight mb-2 title-text">ฐานข้อมูลงานวิจัยทางการศึกษา</h3>
+                <p class="text-sm text-slate-500 subtitle-text">สำนักงานเลขาธิการสภาการศึกษา</p>
+            </div>
+            <a href="http://www.thaiedresearch.org/" target="_blank" class="mt-6 w-full py-3 bg-slate-900 text-white text-center rounded-xl font-semibold hover:bg-orange-600 transition-colors">เข้าชมเว็บไซต์</a>
+        </div>
+
+        <!-- Item 5 -->
+        <div class="glass-card p-5 rounded-3xl flex flex-col h-full resource-item">
+            <div class="logo-container mb-4">
+                <img src="https://lib.rpu.ac.th/wp-content/uploads/2024/11/r5.jpg" alt="CUIR">
+            </div>
+            <div class="flex-grow">
+                <span class="inline-block px-3 py-1 text-xs font-semibold text-pink-600 bg-pink-100 rounded-full mb-2">CUIR</span>
+                <h3 class="text-lg font-bold text-slate-800 leading-tight mb-2 title-text">คลังข้อมูลจุฬาฯ (CUIR)</h3>
+                <p class="text-sm text-slate-500 subtitle-text">สำนักงานวิทยทรัพยากร จุฬาลงกรณ์มหาวิทยาลัย</p>
+            </div>
+            <a href="https://cuir.car.chula.ac.th/" target="_blank" class="mt-6 w-full py-3 bg-slate-900 text-white text-center rounded-xl font-semibold hover:bg-pink-600 transition-colors">เข้าชมเว็บไซต์</a>
+        </div>
+
+        <!-- Item 6 -->
+        <div class="glass-card p-5 rounded-3xl flex flex-col h-full resource-item">
+            <div class="logo-container mb-4">
+                <img src="https://lib.rpu.ac.th/wp-content/uploads/2024/11/r9.jpg" alt="ThaiLIS">
+            </div>
+            <div class="flex-grow">
+                <span class="inline-block px-3 py-1 text-xs font-semibold text-sky-600 bg-sky-100 rounded-full mb-2">ThaiLIS</span>
+                <h3 class="text-lg font-bold text-slate-800 leading-tight mb-2 title-text">โครงการเครือข่าย ThaiLis</h3>
+                <p class="text-sm text-slate-500 subtitle-text">เครือข่ายห้องสมุดในประเทศไทย</p>
+            </div>
+            <a href="http://tdc.thailis.or.th/tdc/" target="_blank" class="mt-6 w-full py-3 bg-slate-900 text-white text-center rounded-xl font-semibold hover:bg-sky-600 transition-colors">เข้าชมเว็บไซต์</a>
+        </div>
+
+        <!-- Item 7 -->
+        <div class="glass-card p-5 rounded-3xl flex flex-col h-full resource-item">
+            <div class="logo-container mb-4">
+                <img src="https://lib.rpu.ac.th/wp-content/uploads/2024/11/r19.png" alt="TCI">
+            </div>
+            <div class="flex-grow">
+                <span class="inline-block px-3 py-1 text-xs font-semibold text-purple-600 bg-purple-100 rounded-full mb-2">TCI</span>
+                <h3 class="text-lg font-bold text-slate-800 leading-tight mb-2 title-text">ศูนย์ดัชนีการอ้างอิงวารสารไทย</h3>
+                <p class="text-sm text-slate-500 subtitle-text">Thai-Journal Citation Index Centre</p>
+            </div>
+            <a href="https://tci-thailand.org/" target="_blank" class="mt-6 w-full py-3 bg-slate-900 text-white text-center rounded-xl font-semibold hover:bg-purple-600 transition-colors">เข้าชมเว็บไซต์</a>
+        </div>
+
+        <!-- Item 8 -->
+        <div class="glass-card p-5 rounded-3xl flex flex-col h-full resource-item">
+            <div class="logo-container mb-4">
+                <img src="http://lib.rpu.ac.th/wp-content/uploads/2023/09/5555-300x52.png" alt="COJ">
+            </div>
+            <div class="flex-grow">
+                <span class="inline-block px-3 py-1 text-xs font-semibold text-red-600 bg-red-100 rounded-full mb-2">Law</span>
+                <h3 class="text-lg font-bold text-slate-800 leading-tight mb-2 title-text">ฐานข้อมูลกฎหมายศาลยุติธรรม</h3>
+                <p class="text-sm text-slate-500 subtitle-text">ศูนย์วิทยบริการศาลยุติธรรม</p>
+            </div>
+            <a href="https://library.coj.go.th/th/index.html" target="_blank" class="mt-6 w-full py-3 bg-slate-900 text-white text-center rounded-xl font-semibold hover:bg-red-600 transition-colors">เข้าชมเว็บไซต์</a>
+        </div>
+
+    </main>
+
+    <footer class="max-w-7xl mx-auto mt-20 pt-8 border-t border-slate-200 text-center text-slate-400 text-sm">
+        <p>&copy; 2024 Resource Directory. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        function filterCards() {
+            const input = document.getElementById('searchInput');
+            const filter = input.value.toLowerCase();
+            const grid = document.getElementById('resourceGrid');
+            const cards = grid.getElementsByClassName('resource-item');
+
+            for (let i = 0; i < cards.length; i++) {
+                const title = cards[i].querySelector('.title-text').innerText;
+                const subtitle = cards[i].querySelector('.subtitle-text').innerText;
+                
+                if (title.toLowerCase().indexOf(filter) > -1 || subtitle.toLowerCase().indexOf(filter) > -1) {
+                    cards[i].style.display = "";
+                } else {
+                    cards[i].style.display = "none";
+                }
+            }
+        }
+    </script>
 </body>
 </html>
