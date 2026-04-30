@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>คลังปัญญามหาวิทยาลัยสงขลานครินทร์</title>
+    <!-- นำเข้าฟอนต์ภาษาไทยจาก Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        /* ตั้งค่าพื้นฐาน */
+        body {
+            font-family: 'Sarabun', sans-serif;
+            background-color: #f0f2f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+        }
+
+        /* กล่องครอบตาราง */
+        .container {
+            width: 100%;
+            max-width: 850px;
+        }
+
+        /* ตกแต่งตารางให้เหมือนการ์ดสมัยใหม่ */
+        .modern-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            background-color: #ffffff;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border: 1px solid #e1e4e8;
+        }
+
+        /* ตกแต่งช่องภายในตาราง */
+        .modern-table td {
+            padding: 30px;
+            vertical-align: middle;
+            border-bottom: 1px solid #f0f2f5;
+        }
+
+        .modern-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        /* ส่วนของรูปภาพ/โลโก้ */
+        .logo-column {
+            width: 250px;
+            text-align: center;
+            background-color: #fafbfc;
+            border-right: 1px solid #f0f2f5;
+        }
+
+        .logo-column img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .logo-column a:hover img {
+            transform: scale(1.08);
+        }
+
+        /* ส่วนของเนื้อหาข้อความ */
+        .content-column {
+            padding-left: 40px !important;
+        }
+
+        /* ลิงก์หัวข้อหลัก */
+        .main-link {
+            display: block;
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #1a73e8;
+            text-decoration: none;
+            line-height: 1.4;
+            margin-bottom: 12px;
+            transition: color 0.2s;
+        }
+
+        .main-link:hover {
+            color: #1557b0;
+            text-decoration: underline;
+        }
+
+        /* ลิงก์หน่วยงานรอง */
+        .sub-link {
+            display: inline-block;
+            font-size: 1rem;
+            color: #5f6368;
+            text-decoration: none;
+            background-color: #f1f3f4;
+            padding: 6px 16px;
+            border-radius: 50px;
+            font-weight: 400;
+            transition: all 0.3s ease;
+        }
+
+        .sub-link:hover {
+            background-color: #e8eaed;
+            color: #202124;
+        }
+
+        /* ปรับแต่งเมื่อเปิดในมือถือ */
+        @media screen and (max-width: 600px) {
+            .modern-table td {
+                display: block;
+                width: 100% !important;
+                text-align: center;
+                border-right: none;
+            }
+            .content-column {
+                padding: 25px !important;
+            }
+            .logo-column {
+                padding-bottom: 10px !important;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <table class="modern-table">
+        <tbody>
+            <tr>
+                <td class="logo-column">
+                    <a href="https://kb.psu.ac.th/psukb/" target="_blank">
+                        <!--  -->
+                        <img src="https://lib.rpu.ac.th/wp-content/uploads/2024/11/r1.jpg" alt="PSU KB Logo">
+                    </a>
+                </td>
+                <td class="content-column">
+                    <a href="https://kb.psu.ac.th/psukb/" class="main-link" target="_blank">
+                        คลังปัญญามหาวิทยาลัยสงขลานครินทร์ (PSU Knowledge Bank)
+                    </a>
+                    <a href="https://kb.psu.ac.th/psukb/" class="sub-link" target="_blank">
+                        สำนักทรัพยากรการเรียนรู้ มหาวิทยาลัยสงขลานครินทร์
+                    </a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+</body>
+</html>
